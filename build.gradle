@@ -1,0 +1,22 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply from: 'https://raw.githubusercontent.com/xuexiangjys/XUtil/master/versions.gradle'
+    addRepos(repositories) //增加代码仓库
+
+    dependencies {
+        classpath deps.android_gradle_plugin
+        classpath deps.android_maven_gradle_plugin
+
+        classpath 'com.github.xuexiangjys.XRouter:xrouter-plugin:1.0.1'
+        classpath 'com.chenenyu:img-optimizer:1.1.1' // 图片压缩
+    }
+}
+
+allprojects {
+    addRepos(repositories) //增加代码仓库
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
